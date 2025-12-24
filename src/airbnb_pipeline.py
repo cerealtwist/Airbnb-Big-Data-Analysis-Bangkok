@@ -19,6 +19,7 @@ def main():
         .master("local[*]")
         .config("spark.driver.memory", "4g")
         .config("spark.sql.shuffle.partitions", "8")
+	.config("spark.hadoop.fs.defaultFS", "file:///")
         .getOrCreate()
     )
 
